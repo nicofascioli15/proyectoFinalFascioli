@@ -18,15 +18,11 @@ const CategoriaProductos = () => {
       const FiltradoCategoria = data.filter( (producto) => producto.categoria == categoria)
       setCategoriaFiltrada(FiltradoCategoria)
 
-
-      
-
-  
   };
   if (categoria != categoriaFiltrada){
     productoFiltrado()
   }
-  },[articulos]);
+  },[categoria]);
 
   
 
