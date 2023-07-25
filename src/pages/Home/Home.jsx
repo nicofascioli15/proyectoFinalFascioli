@@ -1,7 +1,7 @@
 import React from 'react'
 import "../Home/home.css"
 import { Link } from 'react-router-dom'
-import Carrousel from '../../components/Carrousel/Carrousel'
+
 
 
 const Home = () => {
@@ -16,10 +16,10 @@ const Home = () => {
         <Link to="/Productos" className="btn btn-warning">Productos</Link>
       </section>
       </div>
-  
+    
     </div>
 
-    <Carrousel/>
+   
 </>
 
 

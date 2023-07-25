@@ -1,40 +1,18 @@
-import React, { useState, useEffect } from 'react'
-import { useParams, Link } from 'react-router-dom'
+import React from "react";
 import { useDataContext } from "../../Context/ContextData";
+import "bulma/css/bulma.css"
+import "../Articulo/articulo.css"
+import { Link} from "react-router-dom";
 
 
-
-const CategoriaProductos = () => {
-
-    const articulos = useDataContext()
-    const [categoriaFiltrada, setCategoriaFiltrada] = useState([])
-    
-    const {categoria} = useParams()
-  
-    
-    useEffect(() => {
-    const productoFiltrado = async () => {
-      const data = await articulos;
-      const FiltradoCategoria = data.filter( (producto) => producto.categoria == categoria)
-      setCategoriaFiltrada(FiltradoCategoria)
-
-
-      
-
-  
-  };
-  if (categoria != categoriaFiltrada){
-    productoFiltrado()
-  }
-  },[articulos]);
-
-  
+const Articulo = () => {
+const articulos = useDataContext()
 
   return (
 
     <>
     <article className="cardFlex container">
-      {categoriaFiltrada.map((articulo) => {
+      {articulos.map((articulo) => {
         return (
       
           <div key={articulo.id} className="card column is-3">
@@ -58,6 +36,6 @@ const CategoriaProductos = () => {
       </article> 
     </>
   );
-}
+};
 
-export default CategoriaProductos
+export default Articulo;

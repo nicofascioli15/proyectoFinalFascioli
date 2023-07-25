@@ -5,6 +5,11 @@ import { FaFacebook,FaTwitter,FaYoutube, FaLinkedin} from 'react-icons/fa'
 
 
 const Footer = () => {
+
+  const handleSubmit=()=> {
+    
+  }
+
   return (
     <div className='footer'>
 
@@ -29,7 +34,11 @@ const Footer = () => {
     <div className="suscripciones">
 
     <h5>Suscribite para recibir las mejores ofertas de invierno y verano</h5>
-    <input type="text" placeholder='Indicanos tu mail' /> <button className='btn btn-danger'>suscribirme</button>
+    <form action="">
+    <input type="text" placeholder='Indicanos tu mail' />
+     <button onClick={handleSubmit} type='submit' className='btn btn-danger'>suscribirme</button>
+
+    </form>
 
     </div>
 

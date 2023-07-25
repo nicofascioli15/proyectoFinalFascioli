@@ -1,12 +1,10 @@
 .fondoHome {
-    background-color: red;
     background-image: url("https://wallpapers.com/images/hd/black-adidas-shoes-jump-f7o9bkqjnja4anpj.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    background-position-y: -500px;
+    
     width: 100%;
-    height: 700px;
-    border-bottom: solid 5px rgb(255, 230, 0);
+    height: 100%;
 }
 
 .tituloPrincipal {

@@ -24,7 +24,9 @@
 }
 
 
-.suscripciones > input {
-    width: 500px;
+.suscripciones > form > input {
+    width: 450px;
+    height: 35px;
+    margin: 10px;
 
 }
