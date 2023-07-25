@@ -1,0 +1,42 @@
+nav {
+    background-color: rgb(230, 230, 230);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+nav > a > img {
+    width: 40%;
+}
+
+.navBar {
+   
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 90px;
+    list-style: none;
+    gap: 2rem;
+}
+
+.navBar > li > a {
+    text-decoration: none;
+    color: black;
+}
+
+.productosDrop {
+    text-decoration: none;
+    color: black;
+}
+
+
+.carrito {
+   background-color: black;
+   color: white;
+   padding: 10px;
+   margin-left: 5px;
+   border-radius: 20%;
+
+}
+
