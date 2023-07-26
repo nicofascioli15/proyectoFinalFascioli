@@ -30,9 +30,11 @@ const articulos = useDataContext()
             <Link to={`/Productos/${articulo.categoria}/${articulo.id}`} className="btn btn-dark"> Detalles</Link>
           </div>
           
+          
         );
         
       })}
+    
       </article> 
     </>
   );

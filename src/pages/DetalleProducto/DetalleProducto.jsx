@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useDataContext } from "../../Context/ContextData";
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
+
 
 const DetalleProducto = () => {
 
@@ -39,13 +40,13 @@ productoFiltrado()
 
           <p>Agregar Contador para agregar al carrito y bajar del stock</p>
           <p>boton agregar al carrito</p>
-
+          <Link to="/productos">Volver a Productos </Link>
         </article>
-      
+
       )
     })}
   
-
+  
    </div>
   )
 }
