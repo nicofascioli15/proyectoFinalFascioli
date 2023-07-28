@@ -2,11 +2,12 @@ import React from "react";
 import "../Navbar/navBar.css";
 import { Link } from "react-router-dom";
 import { BsFillCartFill } from "react-icons/bs";
-
+import { useCarritoContext } from '../../Context/CarritoContext'
 
 
 const NavBar = () => {
 
+  const {cart} = useCarritoContext()
 
 
   return (
@@ -34,7 +35,7 @@ const NavBar = () => {
 
 
         <li><Link to="/Contacto"> Contacto </Link></li>
-        <li><Link to="/Carrito"><span className="carrito"> <BsFillCartFill />  3</span></Link> </li>
+        <li><Link to="/Carrito"><span className="carrito"><BsFillCartFill />  3</span></Link> </li>
       </ul>
     </nav>
   );

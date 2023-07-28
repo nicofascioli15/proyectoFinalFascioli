@@ -8,6 +8,7 @@ import DetalleProducto from "./pages/DetalleProducto/DetalleProducto"
 import Contacto from "./pages/Contacto/Contacto"
 import Carrito from "./pages/Carrito/Carrito"
 import Error from "./pages/Error/Error"
+import CarritoContext from "./Context/CarritoContext"
 
 import "./app.css"
 import "./components/Navbar/navBar.css"
@@ -21,6 +22,7 @@ function App() {
   return (
     <>
     <ContextData>
+      <CarritoContext>
       <BrowserRouter>
 		<Routes>
 			<Route path="/" element={<Layout/> }>
@@ -34,6 +36,7 @@ function App() {
 			</Route>
 		</Routes>
       </BrowserRouter>
+      </CarritoContext>
     </ContextData>
     </>
   )

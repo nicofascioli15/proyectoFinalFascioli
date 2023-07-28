@@ -2,6 +2,7 @@ import React from 'react'
 import { useContext, useState, useEffect } from 'react'
 import { db } from "../config/firebase";
 import { getDocs, collection } from "firebase/firestore";
+import CartProvider from './CarritoContext';
 
 const dataContext = React.createContext()
 
@@ -35,7 +36,9 @@ const ContextData = ({children}) => {
     return (
 
         <dataContext.Provider value={articulos}>
+        <CartProvider>
             {children}
+        </CartProvider>
         </dataContext.Provider>
 
     )

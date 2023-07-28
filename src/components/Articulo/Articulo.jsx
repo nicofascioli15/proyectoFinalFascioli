@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useDataContext } from "../../Context/ContextData";
 import "bulma/css/bulma.css"
 import "../Articulo/articulo.css"
@@ -6,7 +6,7 @@ import { Link} from "react-router-dom";
 
 
 const Articulo = () => {
-const articulos = useDataContext()
+  const articulos = useDataContext()
 
   return (
 
