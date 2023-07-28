@@ -2,15 +2,23 @@ import React, { useState, useEffect } from 'react'
 import { useDataContext } from "../../Context/ContextData";
 import { Link, useParams } from 'react-router-dom'
 import { useCarritoContext } from '../../Context/CarritoContext';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+
+
 
 
 
 const DetalleProducto = () => {
+
   const {agregarAlCarrito} = useCarritoContext()
   const articulos = useDataContext()
   const [productoFiltrado, setProductoFiltrado] = useState([])
   const [cantidad, setCantidad] = useState (1)
   const {productoId} = useParams()
+  const Alerta = withReactContent(Swal)
 
 
   useEffect(() => {
@@ -36,8 +44,36 @@ const restarCantidad =  () => {
 
 
 const agregar = () =>{
+  const [{stock}] = productoFiltrado 
+  if (cantidad <= stock ){
   agregarAlCarrito(...productoFiltrado, cantidad)
-}
+
+  toast.success("Producto Agregado 😃", {
+    position: "top-right",
+    autoClose: 5000,
+    hideProgressBar: true,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "dark",
+    });
+
+
+  toast()
+} else {  
+
+
+ Alerta.fire({
+    title: <p>NO TENEMOS TANTO STOCK</p>,
+    didOpen: () => {
+      Alerta.error()
+    },
+
+
+})
+
+}}
 
   return (
 
@@ -60,6 +96,7 @@ const agregar = () =>{
           <p>{cantidad}</p>
           <button onClick={restarCantidad}>-</button>
           <Link onClick={agregar}  className="btn btn-dark">Agregar al Carrito</Link>
+          <ToastContainer />
         </article>
 
       )
