@@ -28,6 +28,9 @@ const CartProvider = ({children}) => {
   const borrarProducto = (id) => setCart(cart.filter (producto => producto.id !== id))
 
 
+  const cantidadProductosCarrito = cart.reduce((acumulador, productoActual) => acumulador + productoActual.cantidad, 0)
+
+
 
   return (
     <CarritoContext.Provider value={{
@@ -35,7 +38,8 @@ const CartProvider = ({children}) => {
       limpiarCarrito,
       buscarProductoEnCarrito,
       borrarProducto,
-      agregarAlCarrito
+      agregarAlCarrito,
+      cantidadProductosCarrito
     }}>
       {children}
     </CarritoContext.Provider>
