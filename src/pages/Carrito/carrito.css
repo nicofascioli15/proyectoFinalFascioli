@@ -7,3 +7,8 @@
     text-align: center;
   
    }
+
+   .btnsCarrito {
+    display: flex;
+    gap: 20px;
+   }
