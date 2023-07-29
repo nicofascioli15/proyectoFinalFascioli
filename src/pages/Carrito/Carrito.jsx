@@ -19,7 +19,8 @@ const Carrito = () => {
     )
   } else {
     return (
-      <div>
+      <div className='container'>
+        <Link className='seguirComprando'  to ="/productos">◀︎ Seguir Comprando</Link>
         {cart.map((producto) => {
           return (
 

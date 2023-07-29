@@ -8,6 +8,10 @@
   
    }
 
+   .seguirComprando {
+    color: black;
+   }
+
    .btnsCarrito {
     display: flex;
     gap: 20px;
