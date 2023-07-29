@@ -1,9 +1,22 @@
-import React from 'react'
+import React  from 'react'
 import { useCarritoContext } from '../../Context/CarritoContext'
 import "../Carrito/carrito.css"
+import { Link } from 'react-router-dom'
 
 const Carrito = () => {
-  const {cart, borrarProducto, setCart} = useCarritoContext()
+  const {cart, borrarProducto, cantidadProductosCarrito} = useCarritoContext()
+
+if (cantidadProductosCarrito === 0) {
+  return (
+    <div className='container'>
+    <p>tu carrito esta vacio 😔</p>
+    <Link to='/productos' className='btn btn-warning'> Productos </Link>
+
+   
+    </div>
+  )
+
+} else {
 
   return (
     <div>
@@ -11,6 +24,7 @@ const Carrito = () => {
         return (
           
           
+
 <table className="table container" key={producto.id}>
   <thead>
     <tr>
@@ -46,6 +60,8 @@ const Carrito = () => {
       
     </div>
   )
+
+}
 }
 
 export default Carrito

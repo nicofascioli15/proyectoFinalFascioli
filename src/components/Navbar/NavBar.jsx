@@ -9,6 +9,7 @@ const NavBar = () => {
 
   const {cantidadProductosCarrito} = useCarritoContext()
 
+ 
 
   return (
     <nav >
